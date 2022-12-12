@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{
+        <Stack.Navigator initialRouteName="Search" screenOptions={{
           headerShown: false
         }}>
             <Stack.Screen name="Home" component={Home} />
@@ -21,7 +21,4 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  baseText: {
-    fontFamily: '"Comic Sans MS", "Comic Sans", cursive;'
-  },
 });

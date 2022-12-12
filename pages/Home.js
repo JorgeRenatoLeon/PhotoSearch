@@ -17,6 +17,9 @@ export default function Home({ navigation }) {
   }
   
   const styles = StyleSheet.create({
+    baseText: {
+      fontFamily: '"Comic Sans MS", "Comic Sans", cursive;'
+    },
     container: {
         width: '100%',
     },
