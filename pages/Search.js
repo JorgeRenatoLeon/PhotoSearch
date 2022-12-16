@@ -86,8 +86,8 @@ export default function Search({ navigation }) {
         position: 'relative',
     },
     feed: {
-        height: 'calc(100vh - 130px)',
-        maxHeight: 'calc(100vh - 130px)',
+        height: 'calc(100vh - 125px)',
+        maxHeight: 'calc(100vh - 125px)',
         overflowY: 'auto',
         overflowX: 'hidden',
         maxWidth: '100%',
