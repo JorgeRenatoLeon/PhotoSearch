@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 import TopNavBar from '../components/TopNavBar';
 import MyCollections from '../components/MyCollections';
 import ActivityFeed from '../components/ActivityFeed';
+import BottomMenu from '../components/BottomMenu'
 
 const UserImage = require('../assets/user.png');
 
 import { getRandomPhotos, getPhotosByCollection } from '../api/photos';
 
-export default function Search() {
+export default function Search({ navigation }) {
 
     const [posts, setPosts] = useState([])
 
@@ -65,8 +66,11 @@ export default function Search() {
       <View style={styles.container}>
         <Text style={styles.baseText}>
             <TopNavBar />
-            <MyCollections changeCollection={changeCollection}/>
-            <ActivityFeed posts={posts}/>
+            <View style={styles.feed} >
+                <MyCollections changeCollection={changeCollection}/>
+                <ActivityFeed posts={posts}/>
+            </View>
+            <BottomMenu navigation={navigation}/>
         </Text>
       </View>
     );
@@ -78,6 +82,14 @@ export default function Search() {
     },
     container: {
         width: '100%',
-        minHeight: '100vh',
+        height: '100vh',
+        position: 'relative',
     },
+    feed: {
+        height: 'calc(100vh - 130px)',
+        maxHeight: 'calc(100vh - 130px)',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        maxWidth: '100%',
+    }
   });
