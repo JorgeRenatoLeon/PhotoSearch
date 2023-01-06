@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text, View, Image, Pressable, TextInput } from 'react-native';
 
-import { useDispatch , useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as constants from '../../../redux/constants';
 
-import PhotoActions from './PhotoActions';
-import { Photo } from './PhotoActions';
+import PhotoActions, { Photo } from './PhotoActions';
 
 import styles from '../assets/styles/PhotoItem.js';
 
@@ -32,7 +31,7 @@ const PhotoItem: React.FC<Props> = ({item, editPhoto}) => {
                     </View>
                 )}
                 {!item.editTitle && <Text style={styles.photoLabel}>{item.title}</Text>}
-                <PhotoActions item={item} />
+                <PhotoActions item={item} editPhoto={editPhoto}/>
             </View>
         </View>
     );

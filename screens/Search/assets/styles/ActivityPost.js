@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     user: {
+        fontFamily: 'Kalam',
         fontSize: 8,
         lineHeight: 16,
         fontWeight: "700",
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textDetails: {
+        fontFamily: 'Kalam',
         fontSize: 8,
         lineHeight: 13,
         fontWeight: '300',
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
         alignItems: 'baseline',
     },
     content: {
+        fontFamily: 'Kalam',
         fontWeight: '400',
         fontSize: 10,
         lineHeight: 16,

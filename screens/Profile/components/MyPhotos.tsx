@@ -16,9 +16,25 @@ const MyPhotos: React.FC<Props> = () => {
 
     const photos = useSelector((state: any) => state.photos.items);
 
-    const [photosShowed, setPhotosShowed] = React.useState(photos);
+    const [photosShowed, setPhotosShowed] = React.useState([]);
 
-    const editPhoto = (newPhoto: Photo) => {
+    useEffect(() => {
+        setOriginalPhotos();
+    }, []);
+
+    const setOriginalPhotos = () => {
+        let photoCopy = []
+        for (const element of photos) {
+            photoCopy.push({...element, editTitle: false});
+        }
+        setPhotosShowed(photoCopy);
+    }
+
+    const editPhoto = (newPhoto: Photo, restore: boolean = false) => {
+        if(restore) {
+            setOriginalPhotos();
+            return;
+        }
         const photosEdited = [...photosShowed.map(photo => {
             if (photo.id === newPhoto.id) {
                 return newPhoto;
@@ -33,18 +49,16 @@ const MyPhotos: React.FC<Props> = () => {
     }, [photos]);
 
     return (
-        <Text style={styles.baseText}>
-            <View style={styles.container} >
-                <Text style={styles.title}>My Photos</Text>
-                <FlatList
-                    data={photosShowed}
-                    renderItem={({ item }) => (
-                        <PhotoItem item={item} editPhoto={editPhoto}/>
-                    )}
-                    keyExtractor={item => item.id.toString()}
-                />
-            </View>
-        </Text>
+        <View style={styles.container} >
+            <Text style={styles.title}>My Photos</Text>
+            <FlatList
+                data={photosShowed}
+                renderItem={({ item }) => (
+                    <PhotoItem item={item} editPhoto={editPhoto}/>
+                )}
+                keyExtractor={item => item.id.toString()}
+            />
+        </View>
     );
 }
 

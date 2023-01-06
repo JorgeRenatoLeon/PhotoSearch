@@ -17,7 +17,7 @@ const ActivityFeed: React.FC<Props> = ({posts}) => {
             data={posts}
             renderItem={({item}) => <ActivityPost post={item} />}
             keyExtractor={(item, index) => index.toString()}
-            style={styles.postsContainer}
+            contentContainerStyle={styles.postsContainer}
         />
       </View>
     );

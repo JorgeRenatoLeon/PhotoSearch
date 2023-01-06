@@ -10,15 +10,13 @@ export type Props = {
 
 const BottomCard: React.FC<Props> = ({navigation}) => {
   return (
-    <Text style={styles.baseText}>
-      <View style={styles.container}>
-        <Text style={styles.titleText}>PhotoSearch</Text>
-        <Text style={styles.text}>Find your best photographer in the city</Text>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Search')}>
-          <Text style={styles.buttonLabel}>Search</Text>
-        </Pressable>
-      </View>
-    </Text>
+    <View style={styles.container}>
+      <Text style={styles.titleText}>PhotoSearch</Text>
+      <Text style={styles.text}>Find your best photographer in the city</Text>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('Search')}>
+        <Text style={styles.buttonLabel}>Search</Text>
+      </Pressable>
+    </View>
   );
 }
 

@@ -5,7 +5,7 @@ import { Text, View } from 'react-native';
 import TopNavBar from '../../components/TopNavBar';
 import MyCollections from './components/MyCollections';
 import ActivityFeed from './components/ActivityFeed';
-import BottomMenu from '../../components/BottomMenu'
+import BottomMenu, { Navigation } from '../../components/BottomMenu'
 
 import styles from './assets/styles/Search.js';
 
@@ -14,7 +14,7 @@ const UserImage = require('../../assets/img/user.png');
 import { getRandomPhotos, getPhotosByCollection } from '../../api/photos';
 
 export type Props = {
-    navigation: Object;
+    navigation: Navigation;
 };
 
 const Search: React.FC<Props> = ({ navigation }) => {
@@ -24,7 +24,6 @@ const Search: React.FC<Props> = ({ navigation }) => {
     useEffect(() => {
         getRandomPhotos()
         .then(response => {
-            console.log(response)
             const newPosts = response.data.map(photo => {
                 return {
                     image: photo.urls.full,
@@ -35,7 +34,6 @@ const Search: React.FC<Props> = ({ navigation }) => {
                     userImage: photo.user['profile_image'] ? photo.user['profile_image'].large : UserImage
                 }
             })
-            console.log(newPosts)
 
             setPosts(newPosts)
         })
@@ -48,7 +46,6 @@ const Search: React.FC<Props> = ({ navigation }) => {
         setPosts([])
         getPhotosByCollection(collection.toLowerCase())
         .then(response => {
-            console.log(response)
             const newPosts = response.data.results.map(photo => {
                 return {
                     image: photo.urls.regular,
@@ -59,7 +56,6 @@ const Search: React.FC<Props> = ({ navigation }) => {
                     userImage: photo.user['profile_image'] ? photo.user['profile_image'].large : UserImage
                 }
             })
-            console.log(newPosts)
 
             setPosts(newPosts)
         })
@@ -69,16 +65,14 @@ const Search: React.FC<Props> = ({ navigation }) => {
     }, []);
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.baseText}>
+        <View style={styles.container}>
             <TopNavBar />
             <View style={styles.feed} >
                 <MyCollections changeCollection={changeCollection}/>
                 <ActivityFeed posts={posts}/>
             </View>
             <BottomMenu navigation={navigation}/>
-        </Text>
-      </View>
+        </View>
     );
 }
 

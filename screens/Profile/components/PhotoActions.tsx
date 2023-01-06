@@ -8,12 +8,13 @@ import ShareModal from './ShareModal';
 
 import styles from '../assets/styles/PhotoItem.js';
 
-const ShareIcon = require('../../../assets/svg/share.svg');
-const EditIcon = require('../../../assets/svg/edit.svg');
-const DeleteIcon = require('../../../assets/svg/delete.svg');
+const ShareIcon = require('../../../assets/img/share.png');
+const EditIcon = require('../../../assets/img/edit.png');
+const DeleteIcon = require('../../../assets/img/delete.png');
 
 export type Props = {
-    item: Photo
+    item: Photo,
+    editPhoto: Function
 };
 
 export type Photo = {
@@ -23,7 +24,7 @@ export type Photo = {
     editTitle: boolean
 };
 
-const PhotoActions: React.FC<Props> = ({item}) => {
+const PhotoActions: React.FC<Props> = ({item, editPhoto}) => {
     const dispatch = useDispatch()
 
     const [modalVisible, setModalVisible] = React.useState(false);
@@ -32,10 +33,14 @@ const PhotoActions: React.FC<Props> = ({item}) => {
         dispatch({type: constants.DELETE_PHOTO, payload: id});
     }
 
-    const editPhoto = () => {
-        dispatch({type: constants.EDIT_PHOTO, payload: {...item, editTitle: item.editTitle ? false : true}});
+    const editTitle = () => {
+        if (item.editTitle) {
+            editPhoto(item, true)
+        }
+        else {
+            dispatch({type: constants.EDIT_PHOTO, payload: {...item, editTitle: item.editTitle ? false : true}});
+        }
     }
-
     return (
         <View style={styles.photoInformation}>
             <View style={styles.photoSection}>
@@ -45,7 +50,7 @@ const PhotoActions: React.FC<Props> = ({item}) => {
                 <Text style={styles.label}>Share</Text>
             </View>
             <View style={styles.photoSection}>
-                <Pressable onPress={() => editPhoto()}>
+                <Pressable onPress={() => editTitle()}>
                     <Image source={EditIcon} style={styles.icon} />
                 </Pressable>
                 <Text style={styles.label}>Edit</Text>

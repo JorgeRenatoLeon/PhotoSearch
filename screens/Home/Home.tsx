@@ -13,11 +13,9 @@ export type Props = {
 const Home: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.baseText}>
-        <ImageBackground source={BackgroundImage} style={styles.image} resizeMode="cover">
-            <BottomCard navigation={navigation}/>
-        </ImageBackground>
-      </Text>
+      <ImageBackground source={BackgroundImage} style={styles.image} resizeMode="cover">
+          <BottomCard navigation={navigation}/>
+      </ImageBackground>
     </View>
   );
 }

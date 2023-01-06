@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         lineHeight: 22,
         fontStyle: 'italic',
-        marginBottom: "10px",
+        fontFamily: 'Kalam',
+        marginBottom: 10,
     },
     postsContainer: {
         width: '100%',

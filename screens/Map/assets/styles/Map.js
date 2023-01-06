@@ -1,22 +1,26 @@
 import { StyleSheet, Dimensions } from 'react-native'
 
 let ScreenHeight = Dimensions.get("window").height;
-let ScreenWidth = Dimensions.get("window").width;
-
+  
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        flex: 1,
+        width: '100%',
+        height: ScreenHeight,
+        position: 'relative',
+    },
+    feed: {
+        height: ScreenHeight - 130,
+        maxHeight: ScreenHeight - 130,
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        width: '100%',
     },
     image: {
-        minHeight: ScreenHeight,
+        height: ScreenHeight - 130,
+        width: '100%',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        flex: 1,
     },
 });
 

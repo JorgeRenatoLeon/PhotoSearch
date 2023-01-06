@@ -1,13 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native'
+
+let ScreenWidth = Dimensions.get("window").width;
   
 const styles = StyleSheet.create({
     container: {
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      flexDirection: 'row',
-      padding: 15,
+        width: ScreenWidth,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        padding: 15,
     },
     image: {
         width: 30,
@@ -18,6 +20,7 @@ const styles = StyleSheet.create({
       alignItems: 'baseline',
     },
     title: {
+        fontFamily: 'Kalam',
         color: '#AB7E57',
         fontStyle: 'normal',
         fontWeight: '400',

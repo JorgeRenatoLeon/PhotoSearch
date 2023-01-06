@@ -9,7 +9,7 @@ import styles from '../styles/TopNavBar.js';
 export type Props = {
 };
 
-const BottomCard: React.FC<Props> = () => {
+const TopNavBar: React.FC<Props> = () => {
   return (
     <View style={styles.container}>
       <Image source={LogoImage} style={styles.image}/>
@@ -23,4 +23,4 @@ const BottomCard: React.FC<Props> = () => {
   );
 }
 
-export default BottomCard
+export default TopNavBar

@@ -1,9 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    baseText: {
-        fontFamily: 'Kalam'
-    },
     container: {
         backgroundColor: '#F4DFCA',
         padding: 15,
@@ -23,10 +20,12 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     name: {
+        fontFamily: 'Kalam',
         fontSize: 20,
         fontWeight: 'bold',
     },
     username: {
+        fontFamily: 'Kalam',
         fontSize: 15,
         marginBottom: 10,
     },
@@ -42,6 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     label: {
+        fontFamily: 'Kalam',
         fontSize: 12,
         fontWeight: '400',
     },
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         marginRight: 5,
     },
     quantityLabel: {
+        fontFamily: 'Kalam',
         fontSize: 15,
         fontWeight: 'bold',
     },

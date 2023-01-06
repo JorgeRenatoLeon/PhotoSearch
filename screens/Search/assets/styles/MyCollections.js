@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F4DFCA',
     },
     title: {
+        fontFamily: 'Kalam',
         fontWeight: '700',
         fontSize: 14,
         lineHeight: 22,

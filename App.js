@@ -25,17 +25,17 @@ export default function App() {
   }
 
   return (
-      <Provider store={store}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home" screenOptions={{
-            headerShown: false
-          }}>
-              <Stack.Screen name="Home" component={Home} />
-              <Stack.Screen name="Search" component={Search} />
-              <Stack.Screen name="Map" component={Map} />
-              <Stack.Screen name="Profile" component={Profile} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" screenOptions={{
+          headerShown: false
+        }}>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Search" component={Search} />
+            <Stack.Screen name="Map" component={Map} />
+            <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }

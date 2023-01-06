@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  baseText: {
-      fontFamily: 'Kalam',
-      color: '#fff',
-  },
   container: {
     color: '#fff',
     width: '100%',
@@ -17,6 +13,7 @@ const styles = StyleSheet.create({
     alignItems: 'baseline'
   },
   titleText: {
+    fontFamily: 'Kalam',
     color: '#fff',
     textAlign: 'center',
     alignSelf: 'center',
@@ -25,6 +22,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   text: {
+    fontFamily: 'Kalam',
     color: '#fff',
     fontStyle: 'italic',
     textAlign: 'center',
@@ -41,6 +39,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   buttonLabel: {
+    fontFamily: 'Kalam',
     color: '#fff',
     textAlign: 'center',
     alignSelf: 'center',

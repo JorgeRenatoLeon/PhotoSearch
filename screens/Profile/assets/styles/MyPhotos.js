@@ -1,9 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    baseText: {
-        fontFamily: 'Kalam'
-    },
     container: {
         padding: 15,
         width: '100%',

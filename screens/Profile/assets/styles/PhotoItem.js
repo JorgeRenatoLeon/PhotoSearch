@@ -1,9 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    baseText: {
-        fontFamily: 'Kalam'
-    },
     photoContainer: {
         display: 'flex',
         flexDirection: 'row',
@@ -28,6 +25,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     photoLabel: {
+        fontFamily: 'Kalam',
         fontSize: 14,
         fontWeight: '400',
         marginBottom: 12,
@@ -70,6 +68,7 @@ const styles = StyleSheet.create({
         marginRight: 5,
     },
     label: {
+        fontFamily: 'Kalam',
         fontSize: 12,
         fontWeight: '400',
     },

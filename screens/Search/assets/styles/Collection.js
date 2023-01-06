@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         alignItems: 'baseline',
     },
     title: {
+        fontFamily: 'Kalam',
         fontWeight: '500',
         fontSize: 12,
         lineHeight: 19,
